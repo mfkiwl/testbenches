@@ -3,6 +3,12 @@
 Testbenches Git repository
 ===============================================================================
 
+This repository contains testbenches and verification components for system level
+projects or components connected at block level from the HDL repository.
+
+This repository is not a stand alone one. It must be cloned or linked as a
+submodule inside the HDL repository you want to test.
+
 All the HDL sources can be found in the following git repository:
 
 :git-testbenches:`/`
@@ -23,7 +29,6 @@ between branches.
    There are a lot of great resources and tutorials about git all over the
    `web <http://lmgtfy.com/?q=git+tutorial>`__.
 
-
 If you want to pull down the sources as soon as possible, just do the
 following few steps:
 
@@ -41,14 +46,14 @@ Repository releases and branches
 -------------------------------------------------------------------------------
 
 The repository may contain multiple branches and tags. The
-:git-hdl:`main </>` branch
-is the development branch (latest sources, but not stable). If you check
-out this branch, some builds may fail. If you are not into any kind of
-experimentation, you should only check out one of the release branch.
+:git-testbenches:`main </>` branch is the development branch (latest sources,
+but not stable). If you check out this branch, some builds may fail. If you are
+not into any kind of experimentation, you should only check out one of the
+release branch.
 
 All our release branches have the following naming convention:
 **hdl\_**\ [year_of_release]\ **\_r**\ [1 or 2]. (e.g.
-:git-hdl:`2022_r2 <2022_r2:>`)
+:git-testbenches:`2022_r2 <2022_r2:>`)
 
 ADI does two releases each year when all the projects get an update to
 support the latest tools and get additional new features. \*\* The
