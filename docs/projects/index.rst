@@ -13,3 +13,5 @@ Contents
    :maxdepth: 1
 
    TEMPLATE <template/index>
+   AD7616 <ad7616/index>
+   

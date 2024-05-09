@@ -42,6 +42,41 @@ following few steps:
 Folder structure
 -------------------------------------------------------------------------------
 
+TO EDIT THESE CONTENTS - TBD!!! - the repo has to be modified as now the tb are
+directly under the root, not in a projects folder.
+
+The root of the Testbenches repository has the following structure:
+
+.. code-block::
+
+   .
+   +-- .github
+   +-- common
+   +-- docs
+   +-- library
+   +-- projects
+   +-- scripts
+   +-- Makefile
+   +-- README.md
+   +-- LICENSE
+
+The repository is divided into 5 separate sections:
+
+-  **.github** with all our automations regarding coding checks, GitHub actions
+-  **common** with common system verilog files used across test benches
+-  **docs** with our GitHubIO documentation and regmap source files
+-  **library** with all the Analog Devices Inc. proprietary IP cores and
+   hdl modules, which are required to build the projects
+-  **projects** with all the currently supported projects
+-  **scripts** with our environment scripts that set tools versions, etc.
+
+The file **.gitattributes** is used to properly `handle
+different <https://help.github.com/articles/dealing-with-line-endings/>`__
+line endings. And the **.gitignore** specifies intentionally untracked
+files that Git should ignore. The root **Makefile** can be used to build
+all the project of the repository. To learn more about hdl **Makefiles**
+visit the :ref:`Building & Generating programming files <build_hdl>` section.
+
 Repository releases and branches
 -------------------------------------------------------------------------------
 
