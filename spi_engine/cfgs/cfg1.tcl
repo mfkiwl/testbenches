@@ -20,6 +20,7 @@ set ad_project_params(DATA_DLENGTH)         18
 set ad_project_params(THREE_WIRE)           0
 set ad_project_params(CPOL)                 0
 set ad_project_params(CPHA)                 1
+set ad_project_params(USE_SDO_IDLE_STATE)   1
 set ad_project_params(SDO_IDLE_STATE)       0
 set ad_project_params(SDI_PHY_DELAY)        18
 set ad_project_params(CLOCK_DIVIDER)        2
