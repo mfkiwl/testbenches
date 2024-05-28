@@ -8,7 +8,7 @@ File structure of a project
 
 .. tip::
 
-   In ``/path_to_template/`` you can find a test bench base design.
+   In ``/testbenches/tree/main/base/`` you can find a test bench base design.
 
 Project files for test benches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

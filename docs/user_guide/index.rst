@@ -9,9 +9,9 @@ User Guide
    Introduction <introduction>
    Git repository <git_repository>
    Releases <releases>
-   Build a testbench <build_tb>
-   Testbench architecture <architecture>
-   HDL coding guideline <hdl_coding_guideline>
+   Build a test bench <build_tb>
+   Testbenches architecture <architecture>
+   HDL coding guidelines <hdl_coding_guidelines>
    Documentation guidelines <docs_guidelines>
 
 `Analog Devices, Inc.`_ provides FPGA reference designs for selected hardware
@@ -28,10 +28,9 @@ Contents
 #. :ref:`releases`: Releases and supported tool versions
 #. :ref:`build_tb`: Building and generating the programming files
 #. :ref:`architecture`: HDL testbench architecture explained
-#. :ref:`hdl_coding_guideline`: The Verilog/VHDL coding guidelines that the
+#. :ref:`hdl_coding_guidelines`: The Verilog/VHDL coding guidelines that the
    HDL team follows
 #. :ref:`docs_guidelines`: Documentation guidelines
 #. :dokuwiki:`Reference designs using AMD Xilinx hardware <resources/alliances/xilinx>`
-#. :dokuwiki:`Reference designs using Intel hardware <resources/alliances/altera>`
 
 .. _Analog Devices, Inc.: https://www.analog.com/en/index.html

@@ -1,6 +1,6 @@
-.. _hdl_coding_guideline:
+.. _hdl_coding_guidelines:
 
-ADI HDL coding guideline
+ADI HDL coding guidelines
 ===============================================================================
 
 1. Introduction

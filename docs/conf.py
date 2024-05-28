@@ -27,6 +27,10 @@ intersphinx_mapping = {
     'doctools': ('https://analogdevicesinc.github.io/doctools', None)
 }
 
+# -- External docs configuration ----------------------------------------------
+
+interref_repos = ['hdl']
+
 # -- Custom extensions configuration ------------------------------------------
 
 hide_collapsible_content = True

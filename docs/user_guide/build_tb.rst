@@ -19,7 +19,7 @@ use **Cygwin**.
 Setup and check your environment
 -------------------------------------------------------------------------------
 
-This section contains a guide about how to setup your environment to build any
+This section contains a guide about how to set up your environment to build any
 test bench from the repository:
 
 #. Install the required FPGA design suite. We use `AMD Xilinx Vivado`_.
@@ -33,7 +33,7 @@ test bench from the repository:
    -  For ``hdl_2019_r2`` and older:
       :git-hdl:`hdl/projects/scripts/adi_project_xilinx.tcl <hdl_2019_r2:projects/scripts/adi_project_xilinx.tcl>` for Vivado.
 
-#. Download the tools from the following links:
+#. Download the tools from the following link:
 
    -  `AMD tools <https://www.xilinx.com/support/download.html>`__ (make sure you're
       downloading the proper installer. For full installation, it is
@@ -86,7 +86,7 @@ test bench from the repository:
       [~] which make
       [~] which vivado
 
-Setup the HDL repository
+Set up the HDL repository
 -------------------------------------------------------------------------------
 These designs are built upon ADI's generic HDL reference designs framework.
 ADI does not distribute the bit/elf files of these projects so they
@@ -135,7 +135,7 @@ using ``git pull`` or ``git rebase`` if you have local changes.
    [~] git fetch origin               # this shows you what changes will be pulled on your local copy
    [~] git rebase origin/hdl_2022_r2  # this updates your local copy
 
-Setup the Testbenches repository
+Set up the Testbenches repository
 -------------------------------------------------------------------------------
 
 The :git-testbenches:`` has to be cloned under the :git-hdl:`` as follows:
@@ -174,7 +174,7 @@ In this example, it is building the **AD7616** test bench.
    make
 
 The ``make`` builds all the libraries first and then builds the test bench.
-This assumes that you have the tools and licenses setup correctly. If
+This assumes that you have the tools and licenses set up correctly. If
 you don't get to the last line, the make failed to build one or more
 targets: it could be a library component or the project itself. There is
 nothing you can gather from the ``make`` output (other than which one
@@ -198,7 +198,8 @@ named by the configuration used.
 **Example**
 
 Running the command below will create a folder named
-**cfg_si**.
+**cfg_si** for the following file combination: **cfg_si** configuration file and
+the **test_program_si** test program.
 
 .. code-block:: bash
 

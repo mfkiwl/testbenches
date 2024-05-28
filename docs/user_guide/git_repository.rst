@@ -9,8 +9,10 @@ projects or components connected at block level from the HDL repository.
 This repository is not a stand alone one. It must be cloned or linked as a
 submodule inside the HDL repository you want to test.
 
-All the HDL sources can be found in the following git repository:
+All the **HDL** sources can be found in the following git repository:
+:git-hdl:`/`
 
+All the **Testbenches** sources can be found in the following git repository:
 :git-testbenches:`/`
 
 We assume that the user is familiar with `git <https://git-scm.com/>`__.
@@ -41,9 +43,6 @@ following few steps:
 
 Folder structure
 -------------------------------------------------------------------------------
-
-TO EDIT THESE CONTENTS - TBD!!! - the repo has to be modified as now the tb are
-directly under the root, not in a projects folder.
 
 The root of the Testbenches repository has the following structure:
 
@@ -87,12 +86,12 @@ not into any kind of experimentation, you should only check out one of the
 release branch.
 
 All our release branches have the following naming convention:
-**hdl\_**\ [year_of_release]\ **\_r**\ [1 or 2]. (e.g.
+[year_of_release]\ **\_r**\ [1 or 2]. (e.g.
 :git-testbenches:`2022_r2 <2022_r2:>`)
 
 ADI does two releases each year when all the projects get an update to
 support the latest tools and get additional new features. \*\* The
-main branch is always synchronized with the latest release.*\* If you
+main branch is always synchronized with the latest release. \*\* If you
 are in doubt, ask us on :ez:`fpga`.
 
 .. note::
@@ -103,6 +102,4 @@ are in doubt, ask us on :ez:`fpga`.
    https://github.com/analogdevicesinc/testbenches/releases
 
    The latest version of tools used on main can be found at:
-   :git-hdl:`scripts/adi_env.tcl` (*required_vivado_version* and
-   *required_quartus_version* variables). For Intel Quartus Standard, the version
-   is specified in each project that uses it, depending on the carrier.
+   :git-hdl:`scripts/adi_env.tcl` (*required_vivado_version* variable).

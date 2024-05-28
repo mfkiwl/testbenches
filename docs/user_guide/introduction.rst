@@ -9,9 +9,8 @@ and to provide advice and instructions for using these resources.
 These resources are found on the GitHub, the :git-hdl:`/`.
 
 After reading this guide, the user should be able to build a specific project 
-test bench from the :git-testbenches:`/` and be able to modify (if so desire)
-the digital data path implemented in the FPGA.
-Furthermore, all ADI developed and supported IPs are presented in detail.
+test bench from the :git-testbenches:`/` and be able to modify it (if so
+desired). Furthermore, all ADI developed and supported IPs are presented in detail.
 
 At the same time, this user guide does not intend to be a guide for any third
 party tool. To understand and use the HDL framework efficiently the user needs

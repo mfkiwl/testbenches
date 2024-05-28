@@ -10,10 +10,10 @@ HDL Testbenches
    :scale: 100%
 
 `Analog Devices Inc. <https://www.analog.com>`_
-HDL testbenches for various reference design and prototyping systems.
+HDL test benches for various reference design and prototyping systems.
 This repository contains HDL code (SystemVerilog) and the required Tcl scripts
-to create and build a specific FPGA testbench example design using Xilinx and/or
-Intel tool chain.
+to create and build a specific FPGA test bench example design using Xilinx tool
+chain.
 
 .. hdl-build-status::
 
