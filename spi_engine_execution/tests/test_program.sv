@@ -198,6 +198,7 @@ task generate_transfer(
   cmd[1] = ((`INST_SYNC) & 16'hFF00) >> 8;
   env.cmd_src_seq.push_byte_for_stream(cmd[0]);
   env.cmd_src_seq.push_byte_for_stream(cmd[1]);
+  // generate transfer descriptor
   env.cmd_src_seq.add_xfer_descriptor(8,0,0);
   `INFOV(("Transfer generation finished."), 6);
 endtask
@@ -205,6 +206,7 @@ endtask
 
 task configure_spi_execution();
   xil_axi4stream_data_byte cmd[1:0];
+  bit [7:0] mask;
   // write cfg bits
   cmd[0] = (`INST_CFG) & 8'hFF;
   cmd[1] = ((`INST_CFG) & 16'hFF00) >> 8;
@@ -220,7 +222,18 @@ task configure_spi_execution();
   cmd[1] = ((`INST_DLENGTH) & 16'hFF00) >> 8;
   env.cmd_src_seq.push_byte_for_stream(cmd[0]);
   env.cmd_src_seq.push_byte_for_stream(cmd[1]);
-  env.cmd_src_seq.add_xfer_descriptor(6,0,0);
+  // write cs inv mask
+  if (`CS_ACTIVE_HIGH) begin
+    mask = 8'hFF;
+  end else begin
+    mask = 8'h00;
+  end
+  cmd[0] = (`cs_inv_mask(mask)) & 8'hFF;
+  cmd[1] = ((`cs_inv_mask(mask)) & 16'hFF00) >> 8;
+  env.cmd_src_seq.push_byte_for_stream(cmd[0]);
+  env.cmd_src_seq.push_byte_for_stream(cmd[1]);
+  // generate transfer descriptor
+  env.cmd_src_seq.add_xfer_descriptor(8,0,0);
 endtask
 
 //---------------------------------------------------------------------------

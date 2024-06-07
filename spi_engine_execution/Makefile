@@ -1,6 +1,6 @@
 ####################################################################################
 ####################################################################################
-## Copyright 2021(c) Analog Devices, Inc.
+## Copyright 2024(c) Analog Devices, Inc.
 ####################################################################################
 ####################################################################################
 
@@ -29,6 +29,7 @@ ENV_DEPS +=../../library/common/ad_edge_detect.v
 
 ENV_DEPS += system_project.tcl
 ENV_DEPS += system_bd.tcl
+ENV_DEPS += spi_execution_test_bd.tcl
 ENV_DEPS +=../scripts/adi_sim.tcl
 ENV_DEPS +=../scripts/run_sim.tcl
 
