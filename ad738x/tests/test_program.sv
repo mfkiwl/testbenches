@@ -92,11 +92,11 @@ localparam INST_SLEEP                 = 32'h0000_3100;
 `define sleep(a)                     = INST_SLEEP | (a & 8'hFF);
 
 program test_program (
-  input       ad738x_spi_clk,
-  input       ad738x_irq,
-  input       ad738x_spi_sclk,
-  input [1:0] ad738x_spi_sdi,
-  input       ad738x_spi_cs);
+  input ad738x_spi_clk,
+  input ad738x_irq,
+  input ad738x_spi_sclk,
+  input [(`NUM_OF_SDI - 1):0] ad738x_spi_sdi,
+  input ad738x_spi_cs);
 
 
 test_harness_env env;
@@ -285,7 +285,7 @@ end
 assign m_spi_csn_negedge_s = ~m_spi_csn_int_s & m_spi_csn_int_d;
 
 genvar i;
-for (i = 0; i < 2; i++) begin
+for (i = 0; i < `NUM_OF_SDI; i++) begin
   assign ad738x_spi_sdi[i] = sdi_shiftreg[31]; // all SDI lanes got the same data
 end
 
@@ -479,34 +479,9 @@ task fifo_spi_test();
   axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_ENABLE), `SET_AXI_SPI_ENGINE_ENABLE_ENABLE(0));
 
   // Configure the execution module
-  /*axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), INST_CFG);
+  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), INST_CFG);
   axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), INST_PRESCALE);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), INST_DLENGTH); */
-
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2102);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h10FE);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2007);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2210);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h31A0);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h10FF);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h10FE);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h0207);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h10FF);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2000);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h3001);
-
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2102);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h10FE);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2007);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2212);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h31A0);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h10FF);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h10FE);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2210);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h0207);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h10FF);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h2000);
-  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), 'h3001);
+  axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_CMD_FIFO), INST_DLENGTH);
 
   // Set up the interrupts
   axi_write (`SPI_AD738x_REGMAP_BA + GetAddrs(AXI_SPI_ENGINE_IRQ_MASK),
